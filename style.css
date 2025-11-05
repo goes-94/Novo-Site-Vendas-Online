@@ -11,7 +11,7 @@ body {
     background-color: #000;
     color: #fff;
     font-size: 16px;
-    overflow: hidden;
+    oveflow: hidden;
 }
 
 /* Cabeçalho*/
@@ -228,6 +228,488 @@ header nav li {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #fff;
+    background-color: #010000;
     z-index: 1;
+}
+
+/* Seção de Depoimentos */
+.testimonials-section {
+    padding: 60px 0; /* Espaçamento interno superior e inferior */
+    background-color: #000; /* Fundo preto, como no seu site */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+}
+
+.testimonials-section .container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+.testimonials-section .section-title {
+    color: #7FFF00; /* Verde limão para o título */
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.testimonials-grid {
+    display: inline-flex; /* Para colocar os cards lado a lado */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+    justify-content: space-around; /* Centraliza os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-bottom: 30px;
+}
+
+.testimonial-card {
+    background-color: #1a1a1a; /* Fundo cinza escuro para os cards */
+    border-radius: 25px;
+    padding: 10px;
+    width: calc(25% - 20px); /* Para 4 cards por linha em telas grandes */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    text-align: center;
+    border: 1px solid #7FFF00; /* Borda verde limão */
+    transition: transform 0.3s ease; /* Efeito hover */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px); /* Leve levantamento no hover */
+}
+
+.testimonial-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    margin-bottom: 15px;
+    border: 3px solid #7FFF00; /* Borda verde limão na imagem */
+}
+
+.testimonial-stars {
+    color: #FFD700; /* Cor das estrelas (amarelo dourado) */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #e0e0e0; /* Cor do texto do depoimento */
+}
+
+.testimonial-author {
+    font-size: 0.9em;
+    color: #7FFF00; /* Verde limão para o autor */
+    font-weight: bold;
+}
+
+/* Barra de Satisfação */
+.satisfaction-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    border: 1px solid #7FFF00;
+    border-radius: 50px; /* Bordas arredondadas */
+    padding: 15px 60px;
+    max-width: 270px;
+    margin: 0 auto; /* Centraliza */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.satisfaction-icon {
+    width: 90px;
+    height: 100px;
+    margin-right: 15px;
+    border-radius: 100px;
+}
+
+.satisfaction-text {
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.satisfaction-text span {
+    color: #7FFF00; /* Verde limão para o número */
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+    .testimonial-card {
+        width: calc(50% - 30px); /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 100%; /* 1 card por linha */
+    }
+    .testimonials-section .section-title {
+        font-size: 2em;
+    }
+    .satisfaction-bar {
+        flex-direction: column; /* Ícone e texto em colunas */
+        padding: 20px;
+    }
+    .satisfaction-icon {
+        margin-right: 0;
+        margin-bottom: 100px;
+    }
+}
+/* Seção de Diferenciais (Mantenha o Fundo Preto) */
+.diferenciais-section {
+    padding: 80px 0;
+    background-color: #000; /* Fundo preto */
+    color: #fff;
+    text-align: center;
+    border: 50%;
+}
+
+.diferenciais-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title-diff {
+    color: #7FFF00; /* Verde limão */
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.diferenciais-cards-grid {
+    display: flex;
+    justify-content: space-between; /* Distribui os cards igualmente */
+    gap: 30px; /* Espaço entre os cards */
+}
+
+.diferencial-card {
+    flex: 1; /* Faz os cards ocuparem o mesmo espaço */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-bottom: 5px solid #7FFF00; /* Destaque inferior verde limão */
+}
+
+.diferencial-card:hover {
+    background-color: #242424; /* Leve escurecimento no hover */
+    transform: translateY(-5px); /* Efeito sutil de levantamento */
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    /* Para dar um pequeno brilho verde limão no ícone (opcional) */
+    filter: drop-shadow(0 0 5px #7FFF00); 
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.card-description {
+    color: #ccc;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Responsividade para Diferenciais */
+@media (max-width: 992px) {
+    .diferenciais-cards-grid {
+        flex-wrap: wrap; /* Cards quebram para a próxima linha */
+        justify-content: center;
+    }
+    .diferencial-card {
+        width: 45%; /* 2 cards por linha */
+        flex: unset;
+    }
+}
+
+@media (max-width: 600px) {
+    .diferenciais-cards-grid {
+        flex-direction: column; /* 1 card por linha */
+    }
+    .diferencial-card {
+        width: 100%;
+    }
+    .section-title-diff {
+        font-size: 2em;
+    }
+}
+
+/* Estilização do Rodapé Principal */
+.main-footer {
+    background-color: #111; /* Preto ligeiramente mais claro que o fundo principal */
+    color: #fff;
+    padding: 50px 0;
+    border-top: 3px solid #7FFF00; /* Linha de destaque verde limão no topo */
+}
+
+.main-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between; /* Distribui as colunas */
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1; /* Distribui o espaço igualmente */
+    min-width: 250px; /* Garante que não fiquem muito estreitos */
+}
+
+/* Título e Logo da Empresa */
+.footer-logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #7FFF00; /* Verde Limão */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.company-slogan {
+    color: #ccc;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.copyright-info {
+    font-size: 0.85em;
+    color: #555; /* Cinza escuro para a informação de direitos autorais */
+    margin-top: 30px;
+}
+
+/* Títulos das Colunas */
+.column-title {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #7FFF00; /* Linha sublinhada verde limão */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: inline-block; /* Ajusta a largura da linha */
+}
+
+/* Lista de Contato */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #ccc;
+}
+
+.contact-info li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info li a:hover {
+    color: #7FFF00; /* Efeito hover verde limão */
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: #7FFF00; /* Verde limão para os ícones */
+    font-size: 1.2em;
+}
+
+/* Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #7FFF00; /* Efeito hover verde limão */
+    color: #111; /* Texto/Ícone preto no hover */
+}
+
+
+/* Responsividade */
+@media (max-width: 850px) {
+    .footer-grid {
+        flex-direction: column; /* Colunas empilhadas */
+        text-align: center;
+        align-items: center;
+    }
+    .footer-column {
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+    .column-title {
+        margin: 0 auto 20px auto; /* Centraliza o título */
+    }
+    .social-icons {
+        justify-content: center; /* Centraliza os ícones sociais */
+    }
+}
+
+/* --- Estilização da Página CANIS (Grid de Produtos) --- */
+
+.products-list-section {
+    padding: 80px 0;
+    background-color: #000; /* Fundo preto */
+    color: #fff;
+    text-align: center;
+}
+
+.products-list-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    color: #7FFF00; /* Verde Limão */
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: flex;
+    /* 3 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    border: 1px solid #333; /* Borda sutil */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #7FFF00; /* Borda verde limão no hover */
+}
+
+.product-image {
+    width: 100%; /* Imagem ocupando a largura do card */
+    max-height: 350px; /* Limita a altura */
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+    background-color: #000; /* Fundo preto na área da imagem */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #aaa;
+    font-size: 1em;
+    height: 60px; /* Altura fixa para alinhar cards */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.product-features li {
+    color: #ccc;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-icon {
+    color: #7FFF00; /* Verde limão para o check */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.btn-details {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #7FFF00; /* Botão Verde Limão */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-details:hover {
+    background-color: #99FF33; /* Levemente mais claro no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5em;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Apenas 1 coluna em telas pequenas */
+        display: flex;
+        justify-content: space-between;
+    }
 }
