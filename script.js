@@ -50,3 +50,4 @@ function reiniciarAutoPlay() {
 
 // inicializa o carrossel
 updateSlider();
+

@@ -11,8 +11,10 @@ body {
     background-color: #000;
     color: #fff;
     font-size: 16px;
-    oveflow: hidden;
+    
 }
+
+
 
 /* Cabeçalho*/
 header {
@@ -29,6 +31,8 @@ header {
 }
 
 header h2 {
+    display: grid;
+    justify-content: flex-end;
     width: 250px;
     color: #beff1b;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -38,16 +42,29 @@ header h2 {
 }
 
 header nav ul {
+    color: #7FFF00;
+    list-style: none;
+    text-decoration: none;
     display: grid;
+    align-items: end;
+    justify-content: flex-end;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    
 }
 
-header nav li {
+header nav li a {
+    text-decoration: none;
+    color: #fff;
     color: #beff1b;
     font-weight: bold;
     cursor: pointer;
+    color: #beff1b;
+    text-decoration: none;
+    
 }
+
+
 
 /* Container principal */
 
@@ -60,7 +77,7 @@ header nav li {
     justify-content: center;
     align-items: center;
     padding-top: 100px;
-    overflow: hidden;
+    oveflow: hidden;
 }
 
 /*Lista de Slides */
@@ -116,6 +133,7 @@ header nav li {
 
 .car-information {
     font-weight: bold;
+    
 }
 
 .content h2 {
@@ -131,6 +149,7 @@ header nav li {
 }
 
 .information {
+    text-decoration: none;
     border-radius: 30px;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -590,7 +609,7 @@ header nav li {
 /* --- Estilização da Página CANIS (Grid de Produtos) --- */
 
 .products-list-section {
-    padding: 80px 0;
+    padding: 1200px 0;
     background-color: #000; /* Fundo preto */
     color: #fff;
     text-align: center;
@@ -618,14 +637,26 @@ header nav li {
 
 .product-grid {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     /* 3 colunas em telas grandes */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /*grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));*/ 
     gap: 30px;
     margin-top: 40px;
 }
 
 .product-card {
+    width: calc(33.333% - 20px); 
+    min-width: 200px; /* Garante que os cards não fiquem muito estreitos */
+    
     background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+    /*background-color: #1a1a1a;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -711,5 +742,166 @@ header nav li {
         grid-template-columns: 1fr; /* Apenas 1 coluna em telas pequenas */
         display: flex;
         justify-content: space-between;
+    }
+}
+
+/**Aqui começa a página de teste de detalhes do produto**/
+
+/* ======================================================= */
+/* --- ESTILIZAÇÃO DA PÁGINA DE DETALHES DO PRODUTO --- */
+/* ======================================================= */
+
+.product-details-section {
+    /* Padding-top para evitar que o conteúdo fique atrás do Header Fixo */
+    padding: 280px 0 80px 0; 
+    background-color: #000;
+    color: #fff;
+}
+
+.product-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.breadcrumb a {
+    color: #beff1b; /* Cor Verde Limão do seu tema */
+    text-decoration: none;
+}
+
+.product-content-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start; 
+}
+
+/* Bloco de Imagem */
+.image-gallery {
+    flex: 1;
+    min-width: 300px; 
+}
+
+.main-product-image {
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+    width: 80%;
+    max-width: 330px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    border: 1px solid #333;
+}
+
+/* Bloco de Detalhes */
+.details-block {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 2.5em;
+    color: #beff1b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-short-description {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.price-and-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Botão do WhatsApp (CTA Principal) */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    color: #fff;
+}
+
+.btn-whatsapp i {
+    font-style: normal; 
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+
+.specs-title, .description-title {
+    font-size: 1.5em;
+    color: #beff1b;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.specs-list li {
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.specs-list strong {
+    color: #beff1b;
+    margin-right: 5px;
+}
+
+.full-description {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Responsividade: Empilha a imagem e os detalhes em telas menores */
+@media (max-width: 900px) {
+    .product-content-wrapper {
+        flex-direction: column; 
+    }
+    .image-gallery {
+        min-width: 100%;
+    }
+    .details-block {
+        padding-top: 20px;
     }
 }
