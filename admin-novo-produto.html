@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Novo Produto | Lucão Gaiolas</title>
+    <link rel="stylesheet" href="./admin-style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>Painel Admin</h2>
+        <nav>
+            <a href="#" class="menu-item active">📄 Novo Produto</a>
+            <a href="./index.html" class="menu-item" style="margin-top: 50px;">⬅️ Voltar ao Site</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header-admin">
+            <h1>Cadastrar Novo Canil</h1>
+        </header>
+
+        <section class="form-container">
+            <form id="form-produto">
+                
+                <div class="form-grid" style="display: flex; gap: 20px;">
+                    <div class="form-group" style="flex: 2;">
+                        <label for="titulo">Nome do Modelo:</label>
+                        <input type="text" id="titulo" class="form-control" placeholder="Ex: Canil Super 12 Lugares" required>
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria" class="form-control" required>
+                            <option value="">Selecione...</option>
+                            <option value="pequeno">Pequeno Porte (até 4 lug)</option>
+                            <option value="medio">Médio Porte (até 8 lug)</option>
+                            <option value="grande">Grande Porte (9+ lug)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço (R$):</label>
+                    <input type="number" id="preco" class="form-control" placeholder="0.00" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição Detalhada:</label>
+                    <textarea id="descricao" class="form-control" placeholder="Descreva o material, dimensões, vantagens..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem">Foto do Produto:</label>
+                    <p style="font-size: 0.9em; color: #888; margin-bottom: 10px;">Prefira imagens quadradas com fundo preto.</p>
+                    <input type="file" id="imagem" class="form-control" accept="image/*" required style="padding: 5px;">
+                </div>
+
+                <button type="submit" class="btn-save">Salvar Produto</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <script>
+        document.getElementById('form-produto').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a página de recarregar ao clicar
+            alert("Formulário pronto! Na próxima etapa, conectaremos ao banco de dados.");
+            
+            // AQUI ENTRARÁ O CÓDIGO DO BACKEND (Firebase ou Node.js)
+            // para pegar os valores dos inputs e enviar para o servidor.
+            /*
+            const titulo = document.getElementById('titulo').value;
+            const preco = document.getElementById('preco').value;
+            console.log("Tentando salvar:", titulo, preco);
+            */
+        });
+    </script>
+</body>
+</html>

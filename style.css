@@ -1,93 +1,114 @@
-/*Reset e configurações globais*/
+
+
+@media (max-width: 600px) {
+        .card-produto {
+        width: 100%; /* No celular, ele ocupa a tela toda */
+            }
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Faz um ficar embaixo do outro */
+        align-items: center;
+    }
+
+    .testimonials-section {
+        height: auto; /* Garante que a seção estique */
+        padding: 40px 20px; /* Dá um respiro para o texto não colar nas bordas */
+    }
+}
+
+/* --- RESET E BASE --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
     font-family: "Poppins", sans-serif;
-    
 }
 
 body {
     background-color: #000;
     color: #fff;
-    font-size: 16px;
-    width: 50%;
-    
+    width: 100%; /* Corrigido de 50% para 100% */
+    overflow-x: hidden; /* Impede a rolagem lateral chata */
 }
 
-
-
-/* Cabeçalho*/
+/* --- CABEÇALHO (ESTILO MOBILE POR PADRÃO) --- */
 header {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 600px;
-    gap: 50px;
-    padding: 20px 0;
-    z-index: 10;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente para leitura */
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* No celular, logo em cima, menu embaixo */
+    align-items: center;
+    gap: 10px;
 }
 
 header h2 {
-    display: grid;
-    justify-content: flex-end;
-    width: 250px;
     color: #beff1b;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: xx-large;
-    border-radius: 10px;
-
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 header nav ul {
-    color: #7FFF00;
+    display: flex;
+    gap: 15px;
     list-style: none;
-    text-decoration: none;
-    display: grid;
-    align-items: end;
-    justify-content: flex-end;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    
 }
 
 header nav li a {
     text-decoration: none;
-    color: #fff;
-    color: #beff1b;
+    color: #beff1b; /* Forçando a cor verde limão */
     font-weight: bold;
-    cursor: pointer;
-    color: #beff1b;
-    text-decoration: none;
-    
+    font-size: 0.9rem;
 }
 
+header nav li a:visited {
+    color: #beff1b;
+}
 
+/* --- AJUSTES PARA PC (TELAS MAIORES QUE 768px) --- */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* No PC, fica lado a lado */
+        justify-content: space-around;
+        padding: 20px 50px;
+    }
 
-/* Container principal */
+    header h2 {
+        font-size: 2rem;
+    }
 
+    header nav ul {
+        gap: 30px;
+    }
+
+    header nav li a {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- CORREÇÃO DE CONTAINERS (PARA NÃO ATROPELAR) --- */
 .container {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(circle at center, #000 40%, #333 100%);
+    padding-top: 120px; /* Dá espaço para o header fixo não cobrir o conteúdo */
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding-top: 100px;
-    overflow: -moz-hidden-unscrollable;
+    justify-content: center;
 }
 
 /*Lista de Slides */
 
 .list {
     position: relative;
-    width: 70vw;
-    height: 100%;
+    width: 90vw;
+    height: 80vh;
     
 }
 
@@ -105,6 +126,8 @@ header nav li a {
 .item.active {
     transform: translateX(0);
     opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
 }
 
 /* Imagem do Canil */
@@ -119,6 +142,7 @@ header nav li a {
     max-width: 400px;
     transform: rotate(-20deg);
     transition: transform 0.5s ease-in-out;
+    margin-bottom:0%;
 }
 
 /* Conteudo textual */
@@ -136,6 +160,8 @@ header nav li a {
 .car-information {
     font-weight: bold;
     width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
     
 }
 
@@ -151,7 +177,7 @@ header nav li a {
     max-width: 400px;
 }
 
-.information a{
+.information {
     text-decoration: none;
     border-radius: 40px;
     padding: 10px 20px;
@@ -165,6 +191,9 @@ header nav li a {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    text-decoration: none;
+    
 }
 
 .information:hover {
@@ -212,6 +241,7 @@ header nav li a {
 
 /* indicadores */
 .indicators {
+    
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -223,6 +253,7 @@ header nav li a {
 }
 
 .indicators .number {
+    width: 30%;
     font-size: 3em;
     font-weight: bold;
     color: #beff1b;
@@ -230,7 +261,8 @@ header nav li a {
 
 .indicators ul {
     display: flex;
-    gap: 10;
+    gap: 6px;
+    list-style: none;
 }
 
 .indicators li {
@@ -249,7 +281,7 @@ header nav li a {
 .container::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 0;
     width: 100%;
     height: 1px;
@@ -481,7 +513,7 @@ header nav li a {
 .main-footer {
     background-color: #111; /* Preto ligeiramente mais claro que o fundo principal */
     color: #fff;
-    padding: 50px 0;
+    padding: 10px 0;
     border-top: 3px solid #7FFF00; /* Linha de destaque verde limão no topo */
 }
 
@@ -594,6 +626,7 @@ header nav li a {
 @media (max-width: 850px) {
     .footer-grid {
         flex-direction: column; /* Colunas empilhadas */
+        justify-content: flex-start;
         text-align: center;
         align-items: center;
     }
@@ -615,7 +648,7 @@ header nav li a {
 /* --- Estilização da Página CANIS (Grid de Produtos) --- */
 
 .products-list-section {
-    padding: 1200px 0;
+    padding: 70px 0;
     background-color: #000; /* Fundo preto */
     color: #fff;
     text-align: center;
@@ -733,6 +766,7 @@ header nav li a {
     transition: background-color 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    overflow: hidden;
 }
 
 .btn-details:hover {
