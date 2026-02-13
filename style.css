@@ -40,19 +40,24 @@ header {
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente para leitura */
-    padding: 15px;
+    /*padding: 15px;*/
     z-index: 1000;
     display: flex;
     flex-direction: column; /* No celular, logo em cima, menu embaixo */
     align-items: center;
-    gap: 10px;
+    /*gap: 10px;*/
+
+    padding: 10px;
+    gap: 5px;
 }
 
 header h2 {
     color: #beff1b;
     font-family: Georgia, serif;
-    font-size: 1.5rem;
+    /*font-size: 1.5rem;*/
     text-align: center;
+
+    font-size: 1.2rem;
 }
 
 header nav ul {
@@ -95,12 +100,15 @@ header nav li a:visited {
 
 /* --- CORREÇÃO DE CONTAINERS (PARA NÃO ATROPELAR) --- */
 .container {
-    padding-top: 120px; /* Dá espaço para o header fixo não cobrir o conteúdo */
+    /*padding-top: 120px;*/ /* Dá espaço para o header fixo não cobrir o conteúdo */
     min-height: 100vh;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    padding-top: 140px;
+    display: block;
 }
 
 /*Lista de Slides */
@@ -545,7 +553,7 @@ header nav li a:visited {
 }
 
 .company-slogan {
-    color: #ccc;
+    color: #737070;
     font-size: 1em;
     margin-bottom: 20px;
 }
