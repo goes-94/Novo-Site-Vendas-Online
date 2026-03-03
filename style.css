@@ -700,7 +700,7 @@ header nav li a:visited {
 
 .product-card {
     width: calc(33.333% - 20px); 
-    min-width: 300px; /* Garante que os cards não fiquem muito estreitos */
+    min-width: 360px; /* Garante que os cards não fiquem muito estreitos */
     
     background-color: #1a1a1a;
     border-radius: 10px;
