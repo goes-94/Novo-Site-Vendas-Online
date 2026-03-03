@@ -1,0 +1,4 @@
+git status          # Verifica arquivos modificados
+git add .           # Adiciona todos os arquivos modificados
+git commit -m "mensagem do commit"  # Cria o commit
+git push            # Envia para o repositório remoto
