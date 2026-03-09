@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.lucaogaiolas.com.br/sitemap.xml
